@@ -1,0 +1,64 @@
+Archivos de entrada de datos para análisis estadístico en el experimento RENO
+
+	experimental_setup.dat: en este archivo se contiene dos columnas, 
+				la primera contendra el número de reactores 
+				y la segunda el número de detectores.
+
+	lengths.dat:  		contendra las distancias en metros entre
+				detectores y reactores del experimento. Los
+				datos estarán ordenados de tal forma que las 
+				filas n sean los detectores y las columnas m 
+				correspondan a los reactores, por lo tanto 
+				se tendran arreglos de distancias (n,m).
+
+	bins.dat:		contendrá la definición de los bines en un 
+				arreglo o matriz donde la primer columna 
+				debe contener el extremo izquiedo del bin 
+				y la segunda columna el extremo derecho del bin,
+				en unidades de MeV y en la escala de energía 
+				de neutrino.
+
+	near_black_data_points.dat  este archivo debe contener una lista de el número 
+				de neutrinos detectados por bin en el near-detector.
+
+	far_black_data_points.dat  este archivo debe contener una lista de el número 
+				de neutrinos detectados por bin en el far-detector.
+
+	near_blue_data_points.dat  este archivo debe contener una lista de el número 
+				de neutrinos predichos por el experimento RENO por bin 
+				en el near-detector (datos en color azul dentro de las publicaciones).
+
+	far_blue_data_points.dat  este archivo debe contener una lista de el número 
+				de neutrinos detectados por bin en el far-detector 
+				(datos en color azul dentro de las publicaciones).
+
+	uncertainty_per_bin_of_far_data.dat: este archivo contiene las 
+	                             incertidumbres por bin de los datos far
+
+	uncertainty_per_bin_of_near_data.dat: este archivo contiene las 
+	                              incertidumbres por bin de los datos near
+
+	error_sigmas.dat: contendra las sigmas del experimento en porcentajes,
+ 				      ordenadas alfabeticamente en el idioma inglés.
+
+	pulls_array.dat:        este archivo debe contener un arreglo con i (i=número de pull +1)
+				filas, cada fila debe tener los j-pulls inicializados, este archivo
+				lo utiliza el minimizados AMOEBA.
+	
+	covariance_matrix.dat: el archivo debe contener en forma de arreglo 
+			       las entradas de la matriz de covarianza, es decir,
+			       la suma de los errores estadísticos y sistemáricos.
+
+	stat_covariance_matrix.dat: el archivo debe contener en forma de arreglo 
+			            las entradas de los errores estadísticos 
+				    de la matriz de covarianza.
+
+	syst_covariance_matrix.dat: el archivo debe contener en forma de arreglo 
+			            las entradas de los errores sistemáticos 
+				    de la matriz de covarianza.
+
+	
+
+
+
+	

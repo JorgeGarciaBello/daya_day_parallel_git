@@ -1,0 +1,141 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{M. en C. Jorge Garcia Bello}
+\title{RENO_report}
+\begin{document}
+\chapter*{Reporte del análisis de datos del experimento RENO}
+
+En este reporte se describe la información considerada en un 
+análisis independiente de los datos experimentales recabados
+por el experimento RENO \cite{Bak:2018ydk}, así como el procedimiento que permite 
+tal análisis.
+
+\section*{Estadística $\chi^2$}
+
+La estadística $\chi^2$ utilizada en el presente análisis estadístico
+se adopta de la útilizada en \cite{Bak:2018ydk}, \cite{Seo:2016uom} y
+\cite{RENO:2015ksa}. La cual, tiene la forma
+
+\begin{equation}
+\chi^2=\sum_{i=1}^{N_{bins}} 
+\frac{\left(O_{i}^{F/N}-T_{i}^{F/N}\right)^2}
+     {U_{i}^{F/N}}
+	  +
+	  \sum_{d=N,F} \left(
+	                  \frac{b^{d}}{\sigma_{bkg}^d}
+	               \right)^2
+	  +
+	  \sum_{r=1}^{6}\left(
+	                  \frac{f}{\sigma^r_{flux}}
+	                \right)^2
+	  + \left(\frac{\epsilon}{\sigma_{eff}}\right)^2
+	  + \left(\frac{\eta}{\sigma_{scale}}\right)^2.
+\end{equation}
+
+\begin{itemize}
+  \item $O_{i}^{F/N}$, es la proporción
+  observada far a near de eventos a IBD 
+  en el i-ésimo bin de energía, después de 
+  de quitar el ruido o background.
+  \item $T_{i}^{F/N}$, es la proporción 
+  esperada far a near de eventos IBD. Esta 
+  cantidad es función de otra, de tal 
+  forma que $T_{i}^{F/N}=T_{i}^{F/N}(b^d,f,
+  \epsilon,\eta;\theta_{13},\Delta m^2_{ee})$
+  \item $U_{i}^{F/N}$, es la incertidumbre 
+  estadística de $O_{i}^{F/N}$.
+  \item $\sigma^{d}_{bkg}$, incertidumbre 
+  del ruido o background por detector 
+  near y far.
+  \item $\sigma^{r}_{flux}$, incertidumbre 
+  sistemática no correlacionada del flujo 
+  de reactor.
+  \item $\sigma_{eff}$, incertidumbre 
+  sistemática no correlacionada de 
+  detección y veto de tiempo (timing veto) .
+  \item $\sigma_{scale}$, incertidumbre 
+  sistemática no correlacionada de 
+  escala de energía.
+  \item $b^d$, $f$, $\epsilon$, $\eta$, son 
+  los parámetros pull asociados a cada fuente 
+  de incertidumbre $\sigma_{i}$, con $i=bkg,
+  flux,eff,scale$.
+\end{itemize}
+
+\section*{Obtención de información}
+
+A continuación se describe de dónde se 
+obtienen los datos que conforman la 
+$\chi^2$ y el proceso de obtención. 
+
+\begin{itemize}
+  \item $O_{i}^{F/N}$, 
+  \item $T_{i}^{F/N}$
+  \item $U_{i}^{F/N}$, 
+  \item $\sigma^{d}_{bkg}$, 
+  \item $\sigma^{r}_{flux}$, 
+  \item $\sigma_{eff}$, 
+  \item $\sigma_{scale}$,
+\end{itemize}
+
+
+
+\section*{Resultados del análisis}
+
+\begin{thebibliography}{10}
+%\cite{Bak:2018ydk}
+\bibitem{Bak:2018ydk} 
+  G.~Bak {\it et al.} [RENO Collaboration],
+  %``Measurement of Reactor Antineutrino Oscillation Amplitude and Frequency at RENO,''
+  Phys.\ Rev.\ Lett.\  {\bf 121}, no. 20, 201801 (2018)
+  doi:10.1103/PhysRevLett.121.201801
+  [arXiv:1806.00248 [hep-ex]].
+  %%CITATION = doi:10.1103/PhysRevLett.121.201801;%%
+  %29 citations counted in INSPIRE as of 20 Feb 2020
+
+%\cite{Seo:2016uom}
+\bibitem{Seo:2016uom} 
+  S.~H.~Seo {\it et al.} [RENO Collaboration],
+  %``Spectral Measurement of the Electron Antineutrino Oscillation Amplitude and Frequency using 500 Live Days of RENO Data,''
+  Phys.\ Rev.\ D {\bf 98}, no. 1, 012002 (2018)
+  doi:10.1103/PhysRevD.98.012002
+  [arXiv:1610.04326 [hep-ex]].
+  %%CITATION = doi:10.1103/PhysRevD.98.012002;%%
+  %56 citations counted in INSPIRE as of 20 Feb 2020
+  
+ %\cite{RENO:2015ksa}
+\bibitem{RENO:2015ksa} 
+  J.~H.~Choi {\it et al.} [RENO Collaboration],
+  %``Observation of Energy and Baseline Dependent Reactor Antineutrino Disappearance in the RENO Experiment,''
+  Phys.\ Rev.\ Lett.\  {\bf 116}, no. 21, 211801 (2016)
+  doi:10.1103/PhysRevLett.116.211801
+  [arXiv:1511.05849 [hep-ex]].
+  %%CITATION = doi:10.1103/PhysRevLett.116.211801;%%
+  %187 citations counted in INSPIRE as of 20 Feb 2020
+%\cite{Ahn:2012nd}
+\bibitem{Ahn:2012nd} 
+  J.~K.~Ahn {\it et al.} [RENO Collaboration],
+  %``Observation of Reactor Electron Antineutrino Disappearance in the RENO Experiment,''
+  Phys.\ Rev.\ Lett.\  {\bf 108}, 191802 (2012)
+  doi:10.1103/PhysRevLett.108.191802
+  [arXiv:1204.0626 [hep-ex]].
+  %%CITATION = doi:10.1103/PhysRevLett.108.191802;%%
+  %2019 citations counted in INSPIRE as of 20 Feb 2020
+%\cite{Ahn:2010vy}
+\bibitem{Ahn:2010vy} 
+  J.~K.~Ahn {\it et al.} [RENO Collaboration],
+  %``RENO: An Experiment for Neutrino Oscillation Parameter $\theta_{13}$ Using Reactor Neutrinos at Yonggwang,''
+  arXiv:1003.1391 [hep-ex].
+  %%CITATION = ARXIV:1003.1391;%%
+  %234 citations counted in INSPIRE as of 20 Feb 2020
+
+\end{thebibliography}
+\end{document}

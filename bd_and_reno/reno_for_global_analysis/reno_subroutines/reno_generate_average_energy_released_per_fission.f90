@@ -8,7 +8,7 @@ subroutine reno_generate_average_energy_released_per_fission()
     real(dp) :: ZBQLNOR
     real(dp) :: r
     integer :: i,n
-    
+    !sigma_average_energy_released_per_fission=0.0d0
     select case(randDis)
     case(1)
         do i=1,NBIN

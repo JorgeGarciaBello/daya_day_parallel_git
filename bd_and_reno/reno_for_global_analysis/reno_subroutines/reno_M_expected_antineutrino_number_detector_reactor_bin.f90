@@ -22,28 +22,27 @@ function reno_M_expected_antineutrino_number_detector_reactor_bin(d,r,bin,k_rand
     result=0.0d0    
     do k=1,n
         x=a+h*real(k-1)
-        x=neutrino_energy(bin)*x
-        !x=rand_Nenergy(bin,k_rand)*x
+        !x=neutrino_energy(bin)*x
+        x=x
         if (x<1.8010001) x=1.8010001
         result=result+h*(reno_M_ExpectedNeutrinoSpectrum_dr(x,   bin,d,r,k_rand,t13,dmee)+     & 
                          reno_M_ExpectedNeutrinoSpectrum_dr(x+h, bin,d,r,k_rand,t13,dmee))/2.0d0
     enddo
     select case(d)
         case(1) ! Near detector
-            reno_M_expected_antineutrino_number_detector_reactor_bin=rand_Nefficiency(bin,d,k_rand)*           &
-                                                                   1.01267474277184d0*detector_efficiency(d)*  &
-                                                                                      86400.0d0*LT_d(d)*       &
-                                                                                      detector_calibration(d)* &
-                                                                                      0.2d0*(result/(b-a))
+            reno_M_expected_antineutrino_number_detector_reactor_bin=rand_Nenergy(bin,k_rand)*                           &
+                                                                     1.01267474277184d0*rand_Nefficiency(bin,d,k_rand)*  &
+                                                                                        86400.0d0*LT_d(d)*               &
+                                                                                        detector_calibration(d)*         &
+                                                                                        0.2d0*(result/(b-a))
                                                                                       
         case(2) ! Far detector
-            reno_M_expected_antineutrino_number_detector_reactor_bin= rand_Nefficiency(bin,d,k_rand)*          &
-                                                                   1.08102772018778d0*detector_efficiency(d)*  &
-                                                                                      86400.0d0*LT_d(d)*       &
-                                                                                      detector_calibration(d)* &
-                                                                                      0.2d0*(result/(b-a))
+            reno_M_expected_antineutrino_number_detector_reactor_bin= rand_Nenergy(bin,k_rand)*                           &
+                                                                      1.08102772018778d0*rand_Nefficiency(bin,d,k_rand)*  &
+                                                                                         86400.0d0*LT_d(d)*               &
+                                                                                         detector_calibration(d)*         &
+                                                                                         0.2d0*(result/(b-a))
                                                                                       
-    end select
-    !reno_M_expected_antineutrino_number_detector_reactor_bin=result
+    end select    
     return
 end function reno_M_expected_antineutrino_number_detector_reactor_bin

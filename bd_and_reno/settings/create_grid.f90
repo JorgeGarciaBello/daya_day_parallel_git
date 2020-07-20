@@ -15,13 +15,13 @@ subroutine create_grid(t13_min,t13_max,dm_min,dm_max)
             t13_M_data(i,j)=t13_min+jump_t13*j
         enddo
     enddo
-    call db_write_matrix_m_n(n,t13_M_data,'grid_t13_M')
+    call write_matrix_m_n(n,t13_M_data,'grid_t13_M')
     do j=1,n
         do i=1,n
             dm_M_data(i,j)=dm_min+jump_dm*i
         enddo
     enddo
-    call db_write_matrix_m_n(n,dm_M_data,'grid_dm_M')
+    call write_matrix_m_n(n,dm_M_data,'grid_dm_M')
 
     open(newunit=u,file='data/grid_data_dmee.dat')
     do i=1,n        

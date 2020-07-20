@@ -6,6 +6,8 @@ subroutine reno_generate_reactor_flux_model()
     real(dp) :: ZBQLNOR
     real(dp) :: r
     integer :: i,n
+
+    !sigma_reactor_flux_model=0.0d0
     select case (randDis)
         case(1)
             do i=1,NBIN

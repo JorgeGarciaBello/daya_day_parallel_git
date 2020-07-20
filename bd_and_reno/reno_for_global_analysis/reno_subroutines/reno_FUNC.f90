@@ -56,7 +56,7 @@ function reno_FUNC(t13,dmee,P)
     fr=(/P(3),P(4),P(5),P(6),P(7),P(8)/)
     eps=P(9)
     eta=P(10)   
-
+    reno_FUNC=0.0d0
     !c_i=(/P(11),P(12),P(13),P(14),P(15),P(16),P(17),P(18),P(19),P(2),   &
     !      P(),P(),P(),P(),P(),P(),P(),P(),P(),P(),   &
     !      P(),P(),P(),P(),P(),P()/)
@@ -207,28 +207,27 @@ function reno_FUNC(t13,dmee,P)
                 !N_far =N_far +(1.0d0 + fr(r))*reno_expected_antineutrino_number_detector_reactor_bin(2,r,i,t13,dmee)
                 N_near=N_near+(1.0d0 + fr(r))*data(i,1,r)
                 N_far =N_far +(1.0d0 + fr(r))*data(i,2,r)                
-              enddo              
+              enddo
               nearExpC=( bkg(i,1)*b_d(1) ) + (1.0d0+eps+eta)*N_near
-              farExpC =( bkg(i,2)*b_d(2) ) + (1.0d0+eps+eta)*N_far              
+              farExpC =( bkg(i,2)*b_d(2) ) + (1.0d0+eps+eta)*N_far
 
               O_i=farObs(i)/nearObs(i)
-              !T_i=P(11)*((farExpC)/(nearExpC))
-              T_i=((farExpC)/(nearExpC))
+                 !T_i=P(11)*((farExpC)/(nearExpC))
+              T_i=((farExpC)/(nearExpC))              
 
-              !U2_i=(O_i**2)*(  (sqrt(farObs(i)+bkg(i,2))/farObs(i))**2 + (sqrt(nearObs(i)+bkg(i,1))/nearObs(i))**2   )
+                !U2_i=(O_i**2)*(  (sqrt(farObs(i)+bkg(i,2))/farObs(i))**2 + (sqrt(nearObs(i)+bkg(i,1))/nearObs(i))**2   )
               U2_i=(O_i**2)*(  (sqrt(farObs(i))/farObs(i))**2 + (sqrt(nearObs(i))/nearObs(i))**2   )              
               U2_i=U2_i*0.964d0
-              chi_2=chi_2 + (O_i - T_i)**2/U2_i
-              !print*,i,chi_2
+              chi_2=chi_2 + (O_i - T_i)**2/U2_i                
             enddo
             do d=1,ADS
               chi_2=chi_2 + (b_d(d)/(sigma_background_d(d)/100.0d0))**2              
-            enddo
+            enddo            
             do r=1,RCTS
               chi_2=chi_2 + (fr(r)/(sigma_reactor_flux(r)/100.0d0))**2
-            enddo
+            enddo            
             chi_2=chi_2 + (eps/(sigma_detection_efficiency/100.0d0))**2 + (eta/(sigma_energy_scale/100.0d0))**2
     end select    
-    reno_FUNC=chi_2
+    reno_FUNC=chi_2    
     return
 end function reno_FUNC

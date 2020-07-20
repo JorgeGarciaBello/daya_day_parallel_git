@@ -27,14 +27,12 @@ function reno_expected_antineutrino_number_detector_reactor_bin(d,r,bin,t13,dmee
     enddo
     select case(d)
         case(1) ! Near detector
-            reno_expected_antineutrino_number_detector_reactor_bin=detector_efficiency(d)*  &
-                                                                   1.01267474277184d0*detector_efficiency(d)*  &
+            reno_expected_antineutrino_number_detector_reactor_bin=1.01267474277184d0*detector_efficiency(d)*  &
                                                                                       86400.0d0*LT_d(d)*       &
                                                                                       detector_calibration(d)* &
                                                                                       0.2d0*(result/(b-a))
         case(2) ! Far detector
-            reno_expected_antineutrino_number_detector_reactor_bin=detector_efficiency(d)*  &
-                                                                   1.08102772018778d0*detector_efficiency(d)*  &
+            reno_expected_antineutrino_number_detector_reactor_bin=1.08102772018778d0*detector_efficiency(d)*  &
                                                                                       86400.0d0*LT_d(d)*       &
                                                                                       detector_calibration(d)* &
                                                                                       0.2d0*(result/(b-a))

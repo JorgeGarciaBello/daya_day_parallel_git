@@ -16,7 +16,7 @@ subroutine confidenceRegions(dim_grid)
     real(8) :: s13,m_ee,chi_2
     
     print*, 'Daya Bay: making confidence regions . . . '
-    open(107,                                                                                                            &
+    open(107,                                                                                      &
          file='db_data/chiP_spctrm_grid_min_in_focus_min_results_1809_9PULL_sigmaFar_glob_bb.dat', &
          status='old')
         read(107,*) min_values

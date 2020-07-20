@@ -23,7 +23,8 @@ subroutine readRENOData()
         read(u,*,IOSTAT=reason) neutrino_energy
     close(u)
 
-    PRINT*, 'neutrino_energy', neutrino_energy
+
+    
     
 
     open(newunit=u,file='reno_for_global_analysis/reno_data/reno_sigma_background_near_far.dat', status='old')
@@ -183,6 +184,7 @@ subroutine readRENOData()
         read(u,*,IOSTAT=reason) sigma_cross_section
     close(u)
 
+    !call reno_generate_MC()
     
     !########################################################
     !
@@ -198,18 +200,15 @@ subroutine readRENOData()
     !TP_r=5.0d0*TP_r  !  Subir el valor desde 1.1% disminuye  el angulo. Disminuir al valor aumenta el ji y no cambia el t13    
     !print*, TP_r
 
-       
-       
-   !sigma_detection_efficiency=sigma_detection_efficiency*10.0d0
+
+    neutrino_energy=neutrino_energy*0.964
+    detector_efficiency(2)=1.0076*detector_efficiency(2)
+
+    !sigma_detection_efficiency = sigma_detection_efficiency*10.0d0   
+    sigma_background_d         = sigma_background_d*3.0d0
+    sigma_reactor_flux         = sigma_reactor_flux*8d0    
     
-    sigma_background_d=sigma_background_d*3.0d0    
-
-    sigma_reactor_flux=sigma_reactor_flux*11.0d0
-
-    !print*,'detector_efficiency',detector_efficiency
-    detector_efficiency(2)=1.004d0*detector_efficiency(2)
-    !print*,'detector_efficiency',detector_efficiency
-
+    
+    !call reno_generate_MC()
     return
-
 end subroutine readRENOData

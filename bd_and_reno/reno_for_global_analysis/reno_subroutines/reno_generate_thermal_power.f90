@@ -8,6 +8,7 @@ subroutine reno_generate_thermal_power()
     real(dp) :: r
     integer  :: i,j,n
 
+    !sigma_thermal_power=0.0d0
     select case(randDis)
     case(1)
         do i=1,NBIN

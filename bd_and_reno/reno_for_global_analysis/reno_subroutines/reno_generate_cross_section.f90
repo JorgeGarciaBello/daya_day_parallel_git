@@ -8,6 +8,7 @@ subroutine reno_generate_cross_section()
     real(dp) :: min_val(NBIN), max_val(NBIN)    
     real(dp) :: r
     integer :: i,n
+    !sigma_cross_section=0.0d0
     select case(randDis)
         case(1)
             do i=1,NBIN

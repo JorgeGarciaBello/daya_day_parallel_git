@@ -8,6 +8,7 @@ subroutine reno_generate_fission_fraction()
     real(dp) :: r
     integer  :: i,j,n
 
+    !sigma_fission_fraction=0.0d0
     select case(randDis)
     case(1)
         do i=1,NBIN

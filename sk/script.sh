@@ -1,0 +1,1 @@
+gfortran sk-modules/types.f90 sk-modules/sk_data.f90 sk-subroutines/*.f90 sk_main.f90

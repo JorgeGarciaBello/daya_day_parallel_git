@@ -1,0 +1,53 @@
+
+ The files in this tarbal contain maps of the Super-Kamiokande likelihood distribution
+from the analysis presented in arXiv:1710.09126 and ROOT files containing atmospheric mixing contours from the 
+analysis.
+
+
+::::::: Chi^2 Maps
+
+ Four maps are included, two from each of the main analyses:
+
+ sk.complete.201803.ih.x  - Inverted hierarchy analysis with theta_13 as a fitted parameter
+ sk.complete.201803.nh.x  - Normal hierarchy analysis with theta_13 as a fitted parameter
+
+ sk.q13-fixed.201803.ih.x - Inverted hierarchy analysis with theta_13 fixed to its PDG2016 value
+ sk.q13-fixed.201803.nh.x - Normal hierarchy analysis with theta_13 fixed to its PDG2016 value 
+
+ Each file has a three line header before the start of the actual map.
+ The chi^2 column is the Delta chi^2 value taken relative to the best global best fit 
+ of each analysis. That is, the minimum chi^2 value from the NH fits has been subtracted.
+
+ Take care that the definition of the atmospheric mass splitting in the files differs 
+ for the hierarchies. For NH it is Delta m^2_{32} and for IH it is |Delta m^2_{31}|
+
+
+
+-----------------------
+ Sample file contents:
+  
+ Normal Hierarchy 
+ delta_{CP}        Delta m^2_{32}    sin^2 theta_{13}  sin^2 theta_{23}   chi^2          
+ ----------------------------------------------
+ 0.0                0.001              0.0219            0.3                170.87          
+ 0.0                0.001              0.0219            0.3125             162.43          
+
+
+::::::: Atmospheric Mixing Contours 
+
+ The 90% C.L. contours for the atmospheric mixing parameters are stored as ROOT TGraphs in these files
+ sk1234.atmospheric.201803.ih.root 
+ sk1234.atmospheric.201803.nh.root
+
+ Note that both are drawn with respect to the global best fit (the NH hypothesis) from the analysis.
+ Two example scripts for drawing the contours are included:
+
+ draw_SK_IH.C 
+ draw_SK_NH.C 
+
+ Assuming the root files are in the same directory they can be run as: 
+ > root -b -q draw_SK_NH.C  
+
+
+ Questions and comments can be directed to:
+ raw_at_scphys.kyoto-u.ac.jp

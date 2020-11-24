@@ -8,5 +8,7 @@ module sk_data
     
     real(dp) :: sknhji(44800,4)
     real(dp) :: dbdm32s2t13s2t23prueba3D(44800,4)
-    real(dp) :: renodm32s2t13s2t23prueba3DRENO(44800,4)    
+    real(dp) :: renodm32s2t13s2t23prueba3DRENO(44800,4)
+    real(dp) :: minos_nh(44800,4)
+    real(dp) :: minos_ih(44800,4)
 end module
